@@ -1,0 +1,20 @@
+module(
+    name = "wheelos_tool_kit",
+    version = "0.1.0",
+    compatibility_level = 1,
+)
+
+bazel_dep(name = "rules_cc", version = "0.2.26")
+bazel_dep(name = "rules_pkg", version = "1.3.0")
+bazel_dep(name = "abseil-cpp", version = "20250127.1", repo_name = "com_google_absl")
+bazel_dep(name = "gflags", version = "2.2.2", repo_name = "com_github_gflags_gflags")
+bazel_dep(name = "googletest", version = "1.17.0", repo_name = "com_google_googletest")
+bazel_dep(name = "protobuf", version = "29.0.bcr.1", repo_name = "com_google_protobuf")
+bazel_dep(name = "wheelos_core", version = "1.0.6", repo_name = "core")
+bazel_dep(name = "wheelos_msgs", version = "0.1.6")
+bazel_dep(name = "wheelos_common", version = "0.1.3")
+bazel_dep(name = "wheelos_planning", version = "0.1.0")
+bazel_dep(name = "wheelos_safety", version = "0.1.0")
+
+qt_ext = use_extension("//third_party/qt5:extensions.bzl", "qt")
+use_repo(qt_ext, "qt")
